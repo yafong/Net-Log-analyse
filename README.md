@@ -1,49 +1,47 @@
-# Security Audit
-
+# Network Traffic Analysis
 
 ## 📌 Overview
 
-
 This project was completed as part of the Google Cybersecurity Certificate.
 
-The objective was to conduct a security audit of an organization's
-security practices and identify potential security weaknesses.
+The objective was to analyze network traffic using `tcpdump` to investigate a connectivity issue affecting the website `www.yummyrecipesforme.com`.
 
+The investigation focused on identifying the network protocols involved, interpreting ICMP error messages, and determining why DNS queries were failing.
 
 ## 🎯 Objectives
 
-
-Conduct an internal security audit using the document given. 
-Correctly analyse the documents. 
-Find what is needed to be implemented and what already is.
-
+- Analyze network traffic captured using `tcpdump`.
+- Identify the protocols involved in the incident.
+- Understand the role of DNS, UDP, and ICMP in network communication.
+- Interpret packet information, including IP addresses, ports, and error messages.
+- Identify the affected network service and the suspected root cause.
+- Document the incident and recommend troubleshooting steps.
 
 ## 🧪 Methodology
 
+First, I reviewed the incident scenario and the symptoms reported by users, who were unable to access the website and received a "destination port unreachable" error.
 
-First I need to look at the document given especially the one with the information about the first part of the audit already done. 
-I was given the scope and goals, the listing assets currently managed by the IT department, and a risk assessment. 
-Then I checked the second document about controls categories. 
-And finally I looked at the checklist document I have to complete. 
-Using all the information I had I also answered the recommendation part.
+Then, I analyzed the provided `tcpdump` log to identify the source and destination IP addresses, timestamps, network protocols, and destination port.
 
+I observed that DNS queries were sent over UDP to port 53, but the responses contained ICMP error messages indicating that the destination UDP port was unreachable.
+
+Based on these findings, I identified DNS resolution as the affected service and documented the suspected cause, the impact on website accessibility, and the recommended next steps for troubleshooting.
 
 ## 📚 What I Learned
 
-
 Through this project, I developed practical experience with:
-- Conducting a basic security audit.
-- Analysing an organization's scope, goals, assets, and risk assessment.
-- Assessing existing security controls and identifying missing controls.
-- Understanding how security controls help reduce risks to an organization.
-- Identifying security weaknesses and assessing their potential impact.
-- Developing security recommendations based on identified risks.
-- Understanding the importance of access control, password security, encryption, backups, disaster recovery, and security monitoring.
 
+- Analyzing network traffic using `tcpdump`.
+- Identifying and interpreting DNS, UDP, and ICMP packets.
+- Understanding the role of port 53 in DNS resolution.
+- Reading packet captures to identify communication failures.
+- Interpreting ICMP error messages and their implications.
+- Identifying network services affected by connectivity issues.
+- Documenting cybersecurity incidents and their potential root causes.
+- Recommending troubleshooting steps based on network traffic evidence.
 
 ## ⚠️ Disclaimer
 
+This project was completed in a controlled educational environment as part of the Google Cybersecurity Certificate.
 
-This project was completed in a controlled educational environment
-as part of the Google Cybersecurity Certificate.
-
+The analysis was based on a simulated incident scenario and the provided network traffic logs.
